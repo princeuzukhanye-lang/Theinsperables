@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Uzukhanye & Kwanele ❤️</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    overflow-x: hidden;
+    font-family: Georgia, "Times New Roman", serif;
+    color: white;
+    background:
+        radial-gradient(circle at top, #64164f, #25051f 45%, #080008);
+}
+
+/* Animated background */
+.background {
+    position: fixed;
+    inset: 0;
+    overflow: hidden;
+    z-index: 0;
+}
+
+.orb {
+    position: absolute;
+    width: 280px;
+    height: 280px;
+    border-radius: 50%;
+    filter: blur(90px);
+    opacity: .25;
+    animation: move 10s infinite alternate ease-in-out;
+}
+
+.orb:nth-child(1) {
+    background: #ff4fa3;
+    top: 5%;
+    left: -100px;
+}
+
+.orb:nth-child(2) {
+    background: #8c5cff;
+    bottom: 5%;
+    right: -100px;
+    animation-delay: 2s;
+}
+
+@keyframes move {
+    from {
+        transform: translate(0,0) scale(1);
+    }
+
+    to {
+        transform: translate(80px,-50px) scale(1.3);
+    }
+}
+
+/* Main card */
+.container {
+    position: relative;
+    z-index: 2;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 35px 15px;
+}
+
+.card {
+    width: min(900px, 100%);
+    text-align: center;
+    padding: 45px 20px;
+    border-radius: 35px;
+    background: rgba(255,255,255,.08);
+    border: 1px solid rgba(255,255,255,.18);
+    backdrop-filter: blur(18px);
+    box-shadow: 0 30px 100px rgba(0,0,0,.6);
+    animation: enter 1.5s ease;
+}
+
+@keyframes enter {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.small {
+    font-size: 13px;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    opacity: .7;
+}
+
+h1 {
+    margin-top: 15px;
+    font-size: clamp(45px, 10vw, 90px);
+    background: linear-gradient(90deg,#fff,#ff9ed7,#fff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: glow 3s infinite;
+}
+
+@keyframes glow {
+    50% {
+        filter: drop-shadow(0 0 20px rgba(255,120,200,.7));
+    }
+}
+
+/* Names */
+.names {
+    margin: 20px 0;
+    font-size: clamp(24px,5vw,42px);
+}
+
+.names span {
+    color: #ff9ed7;
+}
+
+.and {
+    color: white !important;
+    margin: 0 10px;
+}
+
+/* PHOTO */
+
+.photo {
+    width: min(470px, 95%);
+    margin: 35px auto;
+    padding: 8px;
+    border-radius: 30px;
+
+    background: linear-gradient(
+        135deg,
+        #ffffff,
+        #ff62bd,
+        #a05cff,
+        #ffffff
+    );
+
+    background-size: 300% 300%;
+
+    animation: borderMove 5s infinite;
+
+    box-shadow:
+        0 0 30px rgba(255,70,180,.3),
+        0 0 80px rgba(255,70,180,.15);
+}
+
+@keyframes borderMove {
+
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.photo img {
+    display: block;
+    width: 100%;
+    border-radius: 23px;
+}
+
+/* Anniversary */
+
+.anniversary {
+    margin-top: 25px;
+}
+
+.anniversary h2 {
+    font-size: clamp(30px,6vw,50px);
+}
+
+.anniversary p {
+    margin-top: 10px;
+    opacity: .75;
+}
+
+/* Wedding announcement */
+
+.wedding {
+    margin: 45px auto 20px;
+    padding: 35px 20px;
+    border-radius: 25px;
+
+    background: rgba(255,255,255,.08);
+
+    border: 1px solid rgba(255,170,220,.25);
+
+    animation: weddingGlow 2.5s infinite;
+}
+
+@keyframes weddingGlow {
+
+    0%,100% {
+        box-shadow: 0 0 10px rgba(255,100,190,.1);
+    }
+
+    50% {
+        box-shadow: 0 0 50px rgba(255,100,190,.4);
+    }
+}
+
+.ring {
+    font-size: 65px;
+
+    animation:
+        ring 2s infinite ease-in-out,
+        shineRing 3s infinite;
+}
+
+@keyframes ring {
+
+    0%,100% {
+        transform: rotate(-8deg) scale(1);
+    }
+
+    50% {
+        transform: rotate(8deg) scale(1.15);
+    }
+}
+
+@keyframes shineRing {
+
+    50% {
+        filter: drop-shadow(0 0 20px #ffd1ec);
+    }
+}
+
+.wedding h2 {
+    margin-top: 12px;
+
+    font-size: clamp(30px,7vw,58px);
+
+    color: #ffd0eb;
+
+    animation: weddingText 2s infinite;
+}
+
+@keyframes weddingText {
+
+    50% {
+        transform: scale(1.03);
+    }
+}
+
+.next-year {
+    margin-top: 15px;
+
+    font-size: 22px;
+
+    letter-spacing: 4px;
+
+    text-transform: uppercase;
+
+    color: #fff;
+}
+
+/* Message */
+
+.message {
+    max-width: 650px;
+
+    margin: 35px auto;
+
+    line-height: 1.9;
+
+    font-size: 18px;
+
+    opacity: .9;
+}
+
+.signature {
+    font-size: 21px;
+
+    color: #ffb6dc;
+
+    line-height: 1.7;
+}
+
+.footer {
+    margin-top: 35px;
+
+    font-size: 12px;
+
+    letter-spacing: 3px;
+
+    opacity: .45;
+}
+
+/* Floating hearts */
+
+.heart {
+    position: fixed;
+
+    bottom: -50px;
+
+    z-index: 10;
+
+    pointer-events: none;
+
+    animation: floatHeart linear forwards;
+}
+
+@keyframes floatHeart {
+
+    0% {
+        transform:
+            translateY(0)
+            rotate(0deg);
+
+        opacity: 0;
+    }
+
+    15% {
+        opacity: 1;
+    }
+
+    100% {
+        transform:
+            translateY(-110vh)
+            rotate(360deg);
+
+        opacity: 0;
+    }
+}
+
+/* Sparkles */
+
+.sparkle {
+    position: fixed;
+
+    pointer-events: none;
+
+    z-index: 3;
+
+    animation: sparkle 2s infinite;
+}
+
+@keyframes sparkle {
+
+    0%,100% {
+        opacity: 0;
+        transform: scale(.3);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="background">
+    <div class="orb"></div>
+    <div class="orb"></div>
+</div>
+
+<div class="container">
+
+<div class="card">
+
+    <div class="small">
+        29 August 2026
+    </div>
+
+    <h1>Two Months</h1>
+
+    <div class="names">
+        <span>Uzukhanye</span>
+        <span class="and">♡</span>
+        <span>Kwanele</span>
+    </div>
+
+    <div class="anniversary">
+
+        <h2>
+            Happy 2 Month Anniversary ❤️
+        </h2>
+
+        <p>
+            Two beautiful months together.
+        </p>
+
+    </div>
+
+    <!-- YOUR ORIGINAL PHOTO FILENAME -->
+    <div class="photo">
+
+        <img
+        src="file_00000000ad6081f48f503bfc1dc2cf0e.png"
+        alt="Uzukhanye and Kwanele">
+
+    </div>
+
+    <!-- WEDDING ANNOUNCEMENT -->
+
+    <div class="wedding">
+
+        <div class="ring">
+            💍
+        </div>
+
+        <h2>
+            WE'RE GETTING<br>
+            MARRIED!
+        </h2>
+
+        <div class="next-year">
+            ✨ NEXT YEAR ✨
+        </div>
+
+    </div>
+
+    <p class="message">
+
+        Two months ago, a beautiful chapter began.
+
+        Today we celebrate the memories we've already created,
+        the laughter we've shared, and the beautiful moments
+        that have brought us here.
+
+        <br><br>
+
+        Two months down...
+
+        <br>
+
+        <strong>
+            Forever to go. ❤️
+        </strong>
+
+        <br><br>
+
+        And now there's something even more beautiful
+        waiting for us...
+
+        <br><br>
+
+        <strong>
+            OUR NEXT CHAPTER:
+            MARRIAGE. 💍✨
+        </strong>
+
+    </p>
+
+    <div class="signature">
+
+        With love,<br>
+
+        <strong>
+            Uzukhanye Mlonyeni
+        </strong>
+
+        <br>
+
+        <span>
+            & Kwanele Gaxela
+        </span>
+
+    </div>
+
+    <div class="footer">
+
+        UZUKHANYE & KWANELE
+        •
+        29.08.2026
+
+    </div>
+
+</div>
+
+</div>
+
+<script>
+
+/* Floating hearts */
+
+function createHeart() {
+
+    const heart =
+        document.createElement("div");
+
+    heart.className = "heart";
+
+    const symbols = [
+        "♥",
+        "♡",
+        "❤",
+        "💗",
+        "💖",
+        "✨"
+    ];
+
+    heart.innerHTML =
+        symbols[
+            Math.floor(
+                Math.random() *
+                symbols.length
+            )
+        ];
+
+    heart.style.left =
+        Math.random() * 100 + "vw";
+
+    heart.style.fontSize =
+        (15 + Math.random() * 25) + "px";
+
+    heart.style.animationDuration =
+        (5 + Math.random() * 6) + "s";
+
+    document.body.appendChild(heart);
+
+    setTimeout(() => {
+        heart.remove();
+    }, 12000);
+}
+
+setInterval(createHeart, 400);
+
+
+/* Sparkles */
+
+function createSparkle() {
+
+    const sparkle =
+        document.createElement("div");
+
+    sparkle.className =
+        "sparkle";
+
+    sparkle.innerHTML = "✦";
+
+    sparkle.style.left =
+        Math.random() * 100 + "vw";
+
+    sparkle.style.top =
+        Math.random() * 100 + "vh";
+
+    sparkle.style.fontSize =
+        (8 + Math.random() * 15) + "px";
+
+    document.body.appendChild(sparkle);
+
+    setTimeout(() => {
+        sparkle.remove();
+    }, 2000);
+}
+
+setInterval(createSparkle, 700);
+
+</script>
+
+</body>
+</html>
